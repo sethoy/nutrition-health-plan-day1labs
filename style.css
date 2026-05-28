@@ -1,0 +1,747 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* You can swap this for 'Inter' or 'Lexend' */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15%;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Logo Section */
+.logo-container {
+    display: flex;
+    align-items: center;
+    
+    padding-left: 15px;
+}
+
+.logo-img {
+    
+    margin-right: 15px;
+}
+
+.logo-text h1 {
+    font-size: 32px;
+    color: #001f3f;
+    line-height: 1;
+}
+
+.logo-text p {
+    font-size: 14px;
+    color: #00e676; /* The bright green from the image */
+    font-weight: bold;
+}
+
+/* Middle Features List */
+.features {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.features li {
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.features span {
+    color: #00e676;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* Button */
+.btn-get-started {
+    background-color: #00e676;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-get-started:hover {
+    background-color: #00c864;
+}
+/* --- Hero Section Styles --- */
+.hero {
+    /* Replace 'hospital-bg.jpg' with your actual background image file */
+    /*background: linear-gradient(rgba(13, 71, 103, 0.85), rgba(13, 71, 103, 0.85)), 
+                url('banner.jpg'); */
+
+    background-image: url(images/banner.jpg);                
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0 0 0; /* No bottom padding so the couple sits on the 'floor' */
+    color: white;
+    overflow: hidden; 
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-header {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.hero-header h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.hero-header p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* --- The 3-Column Grid --- */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr; /* Image | Card | Features */
+    align-items: center;
+    gap: 30px;
+}
+
+/* Column 1: The Couple */
+.col-image {
+    display: flex;
+    align-items: flex-end; /* Sits the couple at the bottom */
+}
+
+.couple-img {
+    max-width: 130%; /* Allows image to be slightly larger */
+    height: auto;
+    display: block;
+    /* Adjust margin-bottom if you want them to 'overlap' the section below */
+    margin-bottom: -5px; 
+}
+
+/* Column 2: The CTA Card */
+.cta-card {
+    background: #008fa1; /* Deep Teal */
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.card-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.card-title h2 {
+    font-size: 22px;
+}
+
+.zip-input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.btn-next {
+    width: 100%;
+    padding: 16px;
+    background: #00e676; /* The Day1Labs Green */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-next:hover {
+    background: #00c864;
+    transform: translateY(-2px);
+}
+
+/* Column 3: Feature List */
+.col-features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.feature-item:last-child {
+    border-bottom: none;
+}
+
+.f-icon {
+    font-size: 24px;
+    color: #00e676; /* Green icons to match branding */
+}
+
+.feature-item p {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/*second section*/
+/* --- Benefits Section --- */
+.benefits {
+    padding: 0px 20px;
+    padding-top: 40px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.benefits-container {
+    max-width: 710px; /* Narrower container for better readability */
+    margin: 0 auto;
+}
+
+.benefits h2 {
+    font-size: 36px;
+    color: #000;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+/* Benefit Cards */
+.benefit-card {
+    background-color: #f0f9fa; /* Very light blue/teal tint */
+    border: 1px solid #e0f2f1;
+    border-radius: 12px;
+    padding: 20px 30px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+}
+
+.check-icon {
+    background-color: #00e676;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Prevents the circle from squishing */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.benefit-card p {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.sub-footer {
+    margin-top: 40px;
+    color: #666;
+    font-size: 18px;
+}
+
+/* --- Counter Section --- */
+.counter-section {
+    padding: 0px 20px;
+    padding-bottom: 40px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.counter-container h3 {
+    font-size: 32px;
+    color: #333;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+/* The Odometer Look */
+.counter-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 30px 0;
+}
+
+.digit {
+    display: inline-block;
+    width: 50px;
+    height: 70px;
+    line-height: 70px;
+    border: 2px solid #0097a7; /* Teal border */
+    border-radius: 8px;
+    font-size: 42px;
+    font-weight: bold;
+    color: #0097a7;
+    background-color: #fff;
+
+    transition: all 0.3s ease-out;
+    display: inline-block;
+    width: 50px;
+    height: 70px;
+    line-height: 70px;
+    border: 2px solid #0097a7;
+    border-radius: 8px;
+    font-size: 42px;
+    font-weight: bold;
+    color: #0097a7;
+    background-color: #fff;
+    /* Keeps the number centered during animation */
+    text-align: center;
+}
+
+.comma, .plus {
+    font-size: 42px;
+    font-weight: bold;
+    color: #0097a7;
+    align-self: flex-end; /* Sits the comma on the baseline */
+    margin-bottom: 5px;
+}
+
+/* Large Button */
+.btn-large-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00e676;
+    color: white;
+    padding: 18px 40px;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 30px;
+    transition: background 0.3s ease;
+}
+.btn-large-cta-bottom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00e676;
+    color: white;
+    padding: 18px 40px;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 30px;
+    transition: background 0.3s ease;
+    margin-top: 100px;
+}
+
+.btn-large-cta:hover {
+    background-color: #00c864;
+}
+
+.arrow {
+    margin-left: 15px;
+    font-size: 28px;
+}
+/* --- Categories Section --- */
+.categories {
+    background-color: #e0f7f9; /* Light cyan background */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.categories-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #111;
+}
+
+/* Card Styling */
+.category-card {
+    background: white;
+    border-radius: 12px;
+    display: flex; /* Side-by-side layout */
+    margin-bottom: 30px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.cat-image {
+    flex: 1; /* Takes up 1/3 of the card */
+    min-height: 250px;
+}
+
+.cat-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps image from squishing */
+}
+
+.cat-content {
+    flex: 2; /* Takes up 2/3 of the card */
+    padding: 30px;
+}
+
+.cat-content h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.tag {
+    font-size: 12px;
+    color: #999;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.stars {
+    color: #ffb400; /* Gold color */
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 14px;
+    color: #666;
+    border-left: 3px solid #00e676;
+    padding-left: 15px;
+}
+
+.footer-note {
+    margin: 40px 0 20px;
+    font-size: 20px;
+}
+/* --- Why Choose Section --- */
+.why-choose {
+    padding: 100px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.why-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.main-title {
+    font-size: 42px;
+    margin-bottom: 60px;
+    color: #000;
+}
+
+/* The Grid Layout */
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 100px 150px; /* Space for the DNA line in the middle */
+    position: relative;
+    margin-bottom: 60px;
+}
+
+/* The DNA Divider */
+.dna-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: #f0f0f0;
+    z-index: 1;
+}
+
+.dna-center-icon {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px 0;
+    width: 647px;
+    height: 606px;
+}
+
+/* Individual Item Styling */
+.why-item {
+    position: relative;
+    z-index: 2;
+}
+
+.icon-circle {
+    font-size: 40px;
+    color: #008fa1;
+    margin-bottom: 10px;
+}
+
+.number-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #008fa1;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.why-item h3 {
+    font-size: 22px;
+    color: #008fa1;
+    margin-bottom: 15px;
+}
+
+.why-item p {
+    color: #444;
+    line-height: 1.6;
+    font-size: 16px;
+}
+/* --- FAQ Section --- */
+.faq {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.faq-item {
+    background: white;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px 25px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0d4767;
+    cursor: pointer;
+    outline: none;
+}
+
+.faq-icon {
+    font-size: 24px;
+    color: #00e676;
+    font-weight: 300;
+}
+
+/* Hidden State */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    padding: 0 25px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Shown State */
+.faq-answer.show {
+    max-height: 200px; /* Adjust based on content length */
+    padding-bottom: 25px;
+}
+/* --- Footer Section --- */
+.site-footer {
+    padding: 60px 20px;
+    background-color: #fff;
+    border-top: 1px solid #eee; /* Subtle line to separate from content */
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows links to wrap on small phone screens */
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #666;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #00e676; /* Highlights green on hover */
+}
+
+.separator {
+    color: #ccc;
+    font-weight: 300;
+}
+
+.copyright {
+    color: #999;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Mobile Tweak: Remove separators on very small screens if needed */
+@media (max-width: 600px) {
+    .separator {
+        display: none;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* For Tablets and Desktops smaller than 1200px */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 20px 5%;
+    }
+    .hero-grid {
+        grid-template-columns: 1fr 1fr; /* Drop to 2 columns first */
+        gap: 20px;
+    }
+    .col-features {
+        grid-column: span 2; /* Move features to their own row */
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* For Smartphones (768px and below) */
+@media (max-width: 768px) {
+    
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .features {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+
+    /* Hero Section */
+    .hero-header h1 {
+        font-size: 32px;
+    }
+    .hero-grid {
+        grid-template-columns: 1fr; /* Single column stack */
+    }
+    .col-image {
+        display: none; /* Hide couple image on mobile to save space */
+    }
+    .cta-card {
+        width: 100%;
+    }
+
+    /* Benefits & Counter */
+    .benefits h2 {
+        font-size: 28px;
+    }
+    .digit {
+        width: 40px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 30px;
+    }
+
+    /* Category Cards */
+    .category-card {
+        flex-direction: column; /* Stack image on top of text */
+    }
+    .cat-image {
+        min-height: 200px;
+    }
+
+    /* Why Choose (DNA Section) */
+    .why-grid {
+        grid-template-columns: 1fr; /* Stack 4 items vertically */
+        gap: 40px;
+    }
+    .dna-line {
+        display: none; /* Hide the central axis on mobile */
+    }
+    .btn-large-cta-bottom {
+        margin-top: 40px;
+    }
+
+    /* FAQ */
+    .faq-question {
+        font-size: 16px;
+    }
+}
