@@ -278,49 +278,57 @@
 </footer>
 
 <script>
+    // --- 1. COUNTER ANIMATION ---
     const counterContainer = document.getElementById('main-counter');
-    const digitElements = counterContainer.querySelectorAll('.digit');
-    const target = +counterContainer.getAttribute('data-target');
     
-    let count = 0;
-    const duration = 2000; // Total time for animation in milliseconds (2 seconds)
-    const startTime = performance.now();
-
-    function updateCounter(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
+    // Check if the counter exists on the page before running to prevent console errors
+    if (counterContainer) {
+        const digitElements = counterContainer.querySelectorAll('.digit');
+        const target = +counterContainer.getAttribute('data-target');
         
-        // Use an easing function to make it slow down at the end
-        const easedProgress = 1 - Math.pow(1 - progress, 3); 
-        count = Math.floor(easedProgress * target);
+        let count = 0;
+        const duration = 2000; // Total time for animation in milliseconds (2 seconds)
+        const startTime = performance.now();
 
-        // Convert number to string and pad with leading zeros (e.g., "095000")
-        const countString = count.toString().padStart(digitElements.length, '0');
+        function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Use an easing function to make it slow down at the end
+            const easedProgress = 1 - Math.pow(1 - progress, 3); 
+            count = Math.floor(easedProgress * target);
 
-        // Update each box with the corresponding digit from the string
-        digitElements.forEach((el, index) => {
-            el.innerText = countString[index];
-        });
+            // Convert number to string and pad with leading zeros (e.g., "095000")
+            const countString = count.toString().padStart(digitElements.length, '0');
 
-        if (progress < 1) {
-            requestAnimationFrame(updateCounter);
-        } else {
-            // Ensure we hit the exact target at the end
-            const finalString = target.toString().padStart(digitElements.length, '0');
+            // Update each box with the corresponding digit from the string
             digitElements.forEach((el, index) => {
-                el.innerText = finalString[index];
+                if (countString[index]) el.innerText = countString[index];
             });
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                // Ensure we hit the exact target at the end
+                const finalString = target.toString().padStart(digitElements.length, '0');
+                digitElements.forEach((el, index) => {
+                    if (finalString[index]) el.innerText = finalString[index];
+                });
+            }
         }
+
+        // Start the animation
+        requestAnimationFrame(updateCounter);
     }
 
-    // Start the animation
-    requestAnimationFrame(updateCounter);
-</script>
-<script>
+    // --- 2. FAQ ACCORDION LOGIC ---
     const faqItems = document.querySelectorAll('.faq-question');
 
     faqItems.forEach(item => {
-        item.addEventListener('click', () => {
+        item.addEventListener('click', (event) => {
+            // Prevents the global body click listener from triggering a redirect when expanding FAQs
+            event.stopPropagation(); 
+            
             const answer = item.nextElementSibling;
             const icon = item.querySelector('.faq-icon');
             
@@ -328,12 +336,24 @@
             answer.classList.toggle('show');
             
             // Change the icon from + to −
-            if (answer.classList.contains('show')) {
-                icon.innerText = '−';
-            } else {
-                icon.innerText = '+';
+            if (icon) {
+                icon.innerText = answer.classList.contains('show') ? '−' : '+';
             }
         });
+    });
+
+    // --- 3. GLOBAL BODY CLICK REDIRECT (WITH EXCLUSIONS) ---
+    document.body.addEventListener('click', function(event) {
+        // Tag names that should NOT trigger a page redirect
+        const excludedTags = ['INPUT', 'SELECT', 'OPTION', 'BUTTON', 'TEXTAREA', 'A'];
+        
+        // If the user clicks a form element or link, let the natural action happen instead of redirecting
+        if (excludedTags.includes(event.target.tagName) || event.target.closest('.faq-question')) {
+            return; 
+        }
+        
+        // Redirect URL
+        window.location.href = 'https://www.mytrking.com/31CRWZR/B2CSF2W/';
     });
 </script>
 </body>
